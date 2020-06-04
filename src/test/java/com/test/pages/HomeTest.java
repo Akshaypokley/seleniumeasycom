@@ -5,6 +5,7 @@ package com.test.pages;
 import com.qc.pages.HomePage;
 import com.qc.reportutils.ExtentReportUtils;
 import com.qc.util.SendMailSSLWithAttachment;
+import com.qc.util.ZipFiles;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -32,7 +33,7 @@ public class HomeTest extends HomePage {
     ExtentReports extent ;
     String screenShotPath;
     ExtentTest extentTest;
-   /* SendMailSSLWithAttachment sendMailSSLWithAttachment;*/
+   ZipFiles zipFiles;
 
     @BeforeClass
     public void BrowserTest() {
@@ -193,8 +194,8 @@ public class HomeTest extends HomePage {
         driver.quit();
         extent.endTest(extentTest); //ending test and ends the current test and prepare to create html report
         extent.flush();
-        /*sendMailSSLWithAttachment=new SendMailSSLWithAttachment();
-        sendMailSSLWithAttachment.ReportsentFun();*/
+        zipFiles=new ZipFiles();
+        zipFiles.ZipfolderFun();
 
         }
 
